@@ -13,8 +13,8 @@ tmux send-keys -t $session:0 'python3 cms.py' C-m
 tmux new-window -t $session:1 -n 'delete'
 tmux send-keys -t $session:1 'bash delete_old_data.sh' C-m
 
-tmux new-window -t $session:2 -n 'log_processor'
-tmux send-keys -t $session:2 'python3 log_processor.py' C-m
+tmux new-window -t $session:2 -n 'monitor'
+tmux send-keys -t $session:2 'python3 monitor.py' C-m
 
 tmux new-window -t $session:3 -n 'merge'
 tmux send-keys -t $session:3 'bash merge.sh' C-m
