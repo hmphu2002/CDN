@@ -2,7 +2,7 @@ mkdir -p data/log
 mkdir -p data/old_log
 sudo mkdir -p /var/www/html/hls
 sudo cp -r  rtmp /var/www/html/
-while IFS=":" read -r app_name stream_name _ _; do
+while IFS=":" read -r app_name stream_name _ _ || [ -n "$app_name" ]; do
     sudo mkdir -p "/var/www/html/hls/$app_name/$stream_name"
 done < rtmp/auth.ini
 sudo chown -R www-data: /var/www/html
